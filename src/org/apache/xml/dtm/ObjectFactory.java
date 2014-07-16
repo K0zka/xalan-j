@@ -59,6 +59,8 @@ final class ObjectFactory {
 
     private static final String SERVICES_PATH = "META-INF/services/";
 
+    private static final String JAR_SERVICE_PROVIDER_NAME = findJarServiceProviderName(DTMManager.defaultPropName);
+
     /** Set to true for debugging */
     private static final boolean DEBUG = false;
 
@@ -370,7 +372,8 @@ final class ObjectFactory {
         }
 
         // Try Jar Service Provider Mechanism
-        return findJarServiceProviderName(factoryId);
+        return DTMManager.defaultPropName.equals(factoryId) ? JAR_SERVICE_PROVIDER_NAME
+                : findJarServiceProviderName(factoryId);
     } // lookUpFactoryClass(String,String):String
 
     //

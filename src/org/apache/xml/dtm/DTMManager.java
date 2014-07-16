@@ -49,7 +49,7 @@ public abstract class DTMManager
 {
 
   /** The default property name to load the manager. */
-  private static final String defaultPropName =
+  static final String defaultPropName =
     "org.apache.xml.dtm.DTMManager";
   
   /** The default class name to use as the manager. */
